@@ -1,6 +1,21 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 
-const TicketRow = (ticket) => {
+const TicketItem = ({ ticketValue }) => {
+    const [checked, setChecked] = useState(false);
+    const checkBox = useRef(null);
+
+    const handleClick = () => {
+        if (checked) {
+            setChecked(false);
+            checkBox.current.checked = false;
+            console.log(checked)
+        } else {
+            setChecked(true);
+            checkBox.current.checked = true;
+            console.log(checked)
+        }
+    }
+
     const renderTicketPriority = priority => {
         switch (priority.toString().toLowerCase().trim()) {
             case "low":
@@ -65,22 +80,14 @@ const TicketRow = (ticket) => {
 
     return (
         <>
-            <td className="sticky left-0 p-4 bg-white">
-                <label className="sr-only" htmlFor={ticket.id}>Row 1</label>
-                <input
-                    className="w-5 h-5 border-gray-200 rounded"
-                    type="checkbox"
-                    id={ticket.Id}
-                />
-            </td>
-            <td className="p-4 font-medium text-gray-900 whitespace-nowrap">{ticket.title}</td>
-            <td className="p-4 text-gray-700 whitespace-nowrap">{`${ticket.createdOn.toLocaleDateString()} ${ticket.createdOn.toLocaleTimeString()}`}</td>
-            <td className="p-4 text-gray-700 whitespace-nowrap">{`${ticket.updatedAt.toLocaleDateString()} ${ticket.updatedAt.toLocaleTimeString()}`}</td>
-            {renderTicketPriority(ticket.priority)}
-            {renderTicketStatus(ticket.status)}
-            <td className="p-4 text-gray-700 whitespace-nowrap">{ticket.type}</td>
+            <td className="p-4 font-medium text-gray-900 whitespace-nowrap">{ticketValue.title}</td>
+            <td className="p-4 text-gray-700 whitespace-nowrap">{`${ticketValue.createdOn.toLocaleDateString()} ${ticketValue.createdOn.toLocaleTimeString()}`}</td>
+            <td className="p-4 text-gray-700 whitespace-nowrap">{`${ticketValue.updatedAt.toLocaleDateString()} ${ticketValue.updatedAt.toLocaleTimeString()}`}</td>
+            {renderTicketPriority(ticketValue.priority)}
+            {renderTicketStatus(ticketValue.status)}
+            <td className="p-4 text-gray-700 whitespace-nowrap">{ticketValue.type}</td>
         </>
     );
 }
 
-export default TicketRow;
+export default TicketItem;

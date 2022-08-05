@@ -8,9 +8,9 @@ let loading = false; // For testing
 const Dashboard = () => {
     if (!loading) {
         return (
-            <div className="flex mx-auto">
+            <div className="sm:flex sm:mx-auto">
                 <Navbar />
-                <div className="flex-grow mx-auto ">
+                <div className="sm:flex-grow sm:mx-auto">
                     <Outlet />
                 </div>
 

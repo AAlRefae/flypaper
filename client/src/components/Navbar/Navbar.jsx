@@ -5,8 +5,11 @@ import { BiHome, BiBookContent, BiTask, BiUser, BiKey, BiGroup, BiLogIn } from "
 const iconSize = "25";
 
 const Navbar = () => {
+
+    // TODO navbar state
+
     return (
-        <div className="flex flex-col justify-between w-16 h-screen bg-white border-r z-40">
+        <div className="flex flex-col justify-between w-16 h-screen bg-white border-r z-40 fixed sm:sticky top-0 z-50">
             <div>
                 {/* Profile Thumbnail */}
                 <div className="inline-flex items-center justify-center w-16 h-16">
