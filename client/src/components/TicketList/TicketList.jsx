@@ -2,8 +2,6 @@ import React from 'react';
 import TicketItem from "../TicketItem/TicketItem";
 
 const TicketList = ({ list, sortType }) => {
-    console.log("Called TicketList")
-    console.log(sortType)
     let sortedList = list;
     switch (sortType) {
         case "nameAscending": {

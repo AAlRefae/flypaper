@@ -1,21 +1,6 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 
 const TicketItem = ({ ticketValue }) => {
-    const [checked, setChecked] = useState(false);
-    const checkBox = useRef(null);
-
-    const handleClick = () => {
-        if (checked) {
-            setChecked(false);
-            checkBox.current.checked = false;
-            console.log(checked)
-        } else {
-            setChecked(true);
-            checkBox.current.checked = true;
-            console.log(checked)
-        }
-    }
-
     const renderTicketPriority = priority => {
         switch (priority.toString().toLowerCase().trim()) {
             case "low":

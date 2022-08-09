@@ -186,7 +186,7 @@ export const ticketData = [
         "type": "Bug",
         "creatorUserId": 4,
         "agentUserId": 55,
-        "assignedProjectId": 23242,
+        "assignedProjectId": 23362,
         "createdOn": new Date(2022, 5, 12, 16, 10, 45),
         "updatedAt": new Date(2022, 5, 13, 14, 30, 22),
         "status": "Unassigned",
@@ -198,7 +198,7 @@ export const ticketData = [
         "type": "Bug",
         "creatorUserId": 11,
         "agentUserId": 9,
-        "assignedProjectId": 23242,
+        "assignedProjectId": 23362,
         "createdOn": new Date(2022, 5, 12, 16, 10, 45),
         "updatedAt": new Date(2022, 5, 13, 14, 30, 22),
         "status": "Assigned",
@@ -210,7 +210,7 @@ export const ticketData = [
         "type": "Feature Request",
         "creatorUserId": 9,
         "agentUserId": 4,
-        "assignedProjectId": 23242,
+        "assignedProjectId": 23362,
         "createdOn": new Date(2022, 5, 12, 16, 10, 45),
         "updatedAt": new Date(2022, 5, 13, 14, 30, 22),
         "status": "Closed",
@@ -222,6 +222,23 @@ export const ticketData = [
 export const projectData = [
     {
         "id": 23242,
-
+        "title": "Test Project 1",
+        "type": "Software",
+        "createdOn": new Date(2020, 3, 8, 11, 4, 33),
+        "updatedAt": new Date(2022, 5, 13, 14, 30, 22)
+    },
+    {
+        "id": 23362,
+        "title": "Test Project 2",
+        "type": "Software",
+        "createdOn": new Date(2019, 1, 3, 6, 2, 9),
+        "updatedAt": new Date(2021, 3, 6, 11, 2, 39)
+    },
+    {
+        "id": 24563,
+        "title": "Test Project 3",
+        "type": "Helpdesk",
+        "createdOn": new Date(2022, 1, 3, 6, 2, 9),
+        "updatedAt": new Date(2022, 8, 11, 7, 1, 54)
     }
 ]
