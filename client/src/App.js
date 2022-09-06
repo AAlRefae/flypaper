@@ -13,6 +13,7 @@ import Profile from "./views/Dashboard/Profile";
 
 // Temp data
 let user = true;
+let admin = true;
 
 const App = () => {
     return (
@@ -28,7 +29,14 @@ const App = () => {
                         </Route>
                         {/*<Route path="tickets" element={<Tickets />} />*/}
                         <Route path="roles" element={<Roles />} />
-                        <Route path="users" element={<Users />} />
+                        <Route path="users" element={<Users />} >
+                            <Route path=":projectId" element={<Users />} />
+                            {/*<Route path=":userId" element={<Users />} />*/}
+                            <Route path="details" element={<Tickets />} >
+                                <Route path=":userId" element={<Users />} />
+                            </Route>
+
+                        </Route>
                         <Route path="profile" element={<Profile />} />
                     </Route>
                 </Route>

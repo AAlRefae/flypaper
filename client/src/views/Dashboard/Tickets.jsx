@@ -56,7 +56,7 @@ const Tickets = () => {
                             <select className="rounded-lg mr-3" value={filterProjectId} onChange={event => {
                                 setFilterProjectId(event.target.value)
                             }}>
-                                <option value="">Show All</option>
+                                <option value="">Show All Projects</option>
                                 {projectData.map(value => {
                                     return (
                                         <option key={value.id} value={value.id}>{value.title}</option>
