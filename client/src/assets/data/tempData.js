@@ -225,7 +225,8 @@ export const projectData = [
         "title": "Test Project 1",
         "type": "Software",
         "createdOn": new Date(2020, 3, 8, 11, 4, 33),
-        "updatedAt": new Date(2022, 5, 13, 14, 30, 22)
+        "updatedAt": new Date(2022, 5, 13, 14, 30, 22),
+        "memberIds": [34252, 34388]
     },
     {
         "id": 23362,
@@ -240,5 +241,48 @@ export const projectData = [
         "type": "Helpdesk",
         "createdOn": new Date(2022, 1, 3, 6, 2, 9),
         "updatedAt": new Date(2022, 8, 11, 7, 1, 54)
+    }
+]
+
+export const userData = [
+    {
+        "id": 34252,
+        "username": "TheFirstUser",
+        "firstName": "Test",
+        "lastName": "User",
+        "email": "thetestuser@test.com",
+        "role": "Project Manager",
+        "createdOn": new Date(2020, 5, 12, 3, 1, 55),
+        "projectIds": [24563]
+    },
+    {
+        "id": 34388,
+        "username": "TheTestUser",
+        "firstName": "Another",
+        "lastName": "User",
+        "email": "thetestuser@test.com",
+        "role": "Reporter",
+        "createdOn": new Date(2020, 5, 12, 3, 1, 55),
+        "projectIds": [23362]
+    },
+    {
+        "id": 23776,
+        "username": "Someone",
+        "firstName": "APerson",
+        "lastName": "InThisData",
+        "email": "thetestuser@test.com",
+        "role": "Agent",
+        "createdOn": new Date(2020, 5, 12, 3, 1, 55),
+        "projectIds": [23362]
+    },
+    {
+        "id": 23776,
+        "username": "Someone",
+        "firstName": "APerson",
+        "lastName": "InThisData",
+        "email": "thetestuser@test.com",
+        "role": "Administrator",
+        "createdOn": new Date(2020, 5, 12, 3, 1, 55),
+        "projectIds": [23362]
     }
 ]

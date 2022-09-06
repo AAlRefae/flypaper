@@ -11,16 +11,24 @@ const Projects = () => {
     const [query, setQuery] = useState("");
     const [SortType, setSortType] = useState("nameAscending");
     const [filteredProjectList, setFilteredProjectList] = useState(projectData);
+    const [projectType, setProjectType] = useState("");
 
     useEffect(() => {
+        let tempList = projectData;
         if (query.length === 0) {
-            setFilteredProjectList(projectData);
+            setFilteredProjectList(tempList);
         }
-        setFilteredProjectList(projectData.filter(project => {
+        if (projectType.length !== 0) {
+            tempList = tempList.filter(project => {
+                return project.type === projectType;
+            })
+        }
+        tempList = tempList.filter(project => {
             return project.title.toLowerCase().trim().includes(query.toLowerCase().trim())
                 || project.type.toLowerCase().trim().includes(query.toLowerCase().trim())
-        }))
-    }, [query])
+        })
+        setFilteredProjectList(tempList);
+    }, [query, projectType])
 
     return (
         <>
@@ -29,6 +37,16 @@ const Projects = () => {
 
                 <div className="hidden sm:flex items-center space-x-4 justify-end pt-3 pr-12 ml-auto">
                     <form className="hidden mb-0 lg:flex">
+                        <div>
+                            <select className="rounded-lg mr-3" value={projectType} onChange={event => {
+                                setProjectType(event.target.value)
+                            }}>
+                                {/*{TODO Option values should be determined from projectData values }*/}
+                                <option value="">Show All Types</option>
+                                <option value="Software">Software</option>
+                                <option value="Helpdesk">Helpdesk</option>
+                            </select>
+                        </div>
                         <div className="relative text">
                             <input
                                 className="h-10 pr-10 text-sm placeholder-gray-400 border-gray-300 rounded-lg focus:z-10"
